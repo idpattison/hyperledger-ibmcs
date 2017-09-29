@@ -8,10 +8,10 @@ Deploying Hyperledger in this way is fine for development and proof-of-concept w
 
 
 ## Install the pre-requisites
-As you'll be interacting with Kubernetes and with IBM Bluemix in this lab, you need to install three  command line tools at the levels shown (or higher):
+As you'll be interacting with Kubernetes, IBM Bluemix and Hyperledger Composer in this lab, you need to install three  command line tools at the levels shown (or higher):
 - kubectl: v1.7 (the Kubernetes command line tool)
 - bx: v0.5 (the Bluemix command line tool).
-- Hyperledger Composer CLI: the latest version.
+- Hyperledger Composer CLI: always use the latest version.
 
 Install `kubectl` from https://kubernetes.io/docs/tasks/tools/install-kubectl/ - use the section titled _Install kubectl binary via curl_. You will need to select your OS and follow some basic instructions to download a file, mark it as executable, and move it into position.
 
@@ -33,6 +33,12 @@ npm install -g composer-cli
 ```
 > **NB:** don't try to install this with _sudo_, it will cause errors.
 
+## Clone the repository
+Clone this git repository to your local machine
+```bash
+git clone https://github.com/idpattison/hyperledger-ibmcs.git
+cd hyperledger-ibmcs
+```
 
 ## Set up a container cluster
 Point the Bluemix CLI at the API endpoint for your Bluemix setup, then login
@@ -169,6 +175,8 @@ create/create_composer-rest-server.sh <business-network-name>
 Examine the running pods (either with the Kubernetes Dashboard or `kubectl get pods`) to see that the REST server has started.  View the logs from the Dashboard (or use `kubectl logs <container-name>`) to ensure that it is serving on port 3000 - this will be exposed externally as port 31090.
 
 Now access the Composer REST server explorer; browse to http://your-ip-address:31090/explorer
+
+**Congratulations!** You've successfully deployed a Hyperledger Fabric Blockchain and a business network to IBM Container Services, and exposed it as an API.
 
 
 ## Cleaning up
