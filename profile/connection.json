@@ -1,0 +1,23 @@
+{
+  "name": "ibmcd",
+  "type": "hlfv1",
+  "orderers": [
+      {
+          "url": "grpc://<IP-ADDRESS>:31010"
+      }
+  ],
+  "ca": {
+      "url": "http://<IP-ADDRESS>:30000",
+      "name": "CA1"
+  },
+  "peers": [
+      {
+          "requestURL": "grpc://<IP-ADDRESS>:30110",
+          "eventURL": "grpc://<IP-ADDRESS>:30111"
+      }
+  ],
+  "keyValStore": "/<HOME>/.composer-credentials",
+  "channel": "channel1",
+  "mspID": "Org1MSP",
+  "timeout": "300"
+}
