@@ -122,7 +122,7 @@ We're going to deploy the business network, but to do that we need a connection 
 Create a new connection profile directory for IBM Container Services and copy the example profile.
 ```bash
 mkdir ~/.composer-connection-profiles/ibmcs
-cp profile/connection.js ~/.composer-connection-profiles/ibmcs
+cp profile/connection.json ~/.composer-connection-profiles/ibmcs
 ```
 
 Edit it to use the public IP address of your container cluster - the one from `bx cs workers blockchain`.
